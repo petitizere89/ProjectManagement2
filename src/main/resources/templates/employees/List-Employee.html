@@ -1,0 +1,37 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head th:replace="latouts::head">
+	</head>
+	
+	<body>
+		<div class="container">
+			<h3>Projects Directory</h3>
+			<hr>
+			<!-- Add New Project -->		
+			<a th:href="@{/projects/new}"
+				class=""ntm btn-primary btn-sm mb-3">
+				 New Project
+			</a>
+			<table class="table table-bordered table-striped">
+				<thead class="thead-dark">
+					<tr>
+						<th>Project Name </th>
+						<th>Project Stage</th>
+					</tr>
+				</thead>
+				<tbody>
+		 	 		<tr th:each="aEmployee: ${empDisplay}">
+		 	 			<td th:text="${aEmployee.firstName}">
+		 	 			<td>............</td>
+		 	 			<td th:text="${aEmployee.lastName}">
+		 	 			<td>............</td>
+		 	 			<td th:text="${aEmployee.age}">
+		 	 			<td>............</td>
+						<td th:text="${aEmployee.salary}"> 	 			
+		 	 		</tr>
+				</tbody>
+			</table>
+				 
+		</div>
+	</body>
+</html>

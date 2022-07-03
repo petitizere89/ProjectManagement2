@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head th:replace="Layouts::headNewProject">
+
+<title>Home</title>
+
+</head>
+  <body>
+  
+  <nav th:replace="Layouts::navbarFragment"></nav>
+  <div class="container">
+  	<form action="/projects/save" method="POST" th:object="${project}">
+  	<input type="text" placeholder="Project Name" th:field="${project.name}"> 
+  	 <select th:field="${project.stage}">
+  	   <option th:value="NOTSTARTED">Not Started</option>
+  	   <option th:value="INPROGRESS"> In Progress</option>
+  	   <option th:value="COMPLETED"> Completed</option>
+  	 </select>
+  	 <textarea type="text" placeholder="Enter Project Description" th:field="${project.description}"></textarea>
+  	 
+  	 <select th:field="*{employees}" multiple="multiple">
+ 				<option th:each= "employee : ${AllEmployees}"
+ 						the:value = "${employee.empId}"
+ 						th:text = "${employee.firstName}"
+ 						value="">
+ 				</option>
+ 	 </select>
+  	 
+  	 <button type="submit">Create Project</button>
+  	</form>
+  </div>
+   
+    <!-- <div>
+ 	<h4> Current Projects</h4>
+	<table class="table table-bordered table-striped" >
+		<thead class="thead-dark">
+ 			<tr>
+ 			   <th>Project Name</th>
+ 			   <th>Description</th>
+ 			   <th>Project Stage</th>
+ 			   <th>Select Employees</th>
+ 			   
+ 			</tr>
+ 		</thead>
+ 		<tbody >
+ 		<tr th:each= "aHomeProjectsObject: ${dispProjects}">
+ 			<td th:text="${aHomeProjectsObject.name}"/> 
+ 			<td th:text="${aHomeProjectsObject.description}"/>
+ 			<td th:text="${aHomeProjectsObject.stage}"/> 
+ 			
+ 			
+ 			
+ 			<button type="submit">Create a Project</button>
+ 		</tr>
+ 		</tbody>
+ 	</table>
+ 	
+ </div> -->
+  </body>
+</html>

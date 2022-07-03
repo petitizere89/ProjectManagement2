@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="Layouts::Employees">
+
+<title>Home</title>
+
+</head>
+<body>
+
+<nav th:replace="Layouts::navbarFragment"></nav>
+<div class="container">
+   <form action="/employees/save" th:object="${employee}"  method="POST">
+    <input type="text" placeholder="Employee First Name"  th:field="${employee.firstName}">
+   	<input type="text" placeholder="Employee Last Name"  th:field="${employee.lastName}">
+  	<input type="number" placeholder="Enter age" th:field="${employee.age}">
+  	<input type="number" placeholder="Enter salary"    th:field="${employee.salary}">
+  	
+  	<button type="submit">Create Employee</button> 
+  	</form>
+  </div>
+  
+  <div>
+ 	<h4> Current Employees</h4>
+ 	 <table class="table table-bordered table-striped" style="width:100%">
+ 	 	<thead class="thead-dark">
+ 	 		<tr>
+ 	 			<th>First Name</th>
+ 	 			<th>Last  Name</th>
+ 	 			<th>Age</th>
+ 	 			<th>salary</th>
+ 	 		</tr>
+ 	 		<tr th:each="aEmployee: ${empDisplay}">
+ 	 			<td th:text="${aEmployee.firstName}">
+ 	 			<td th:text="${aEmployee.lastName}">
+ 	 			<td th:text="${aEmployee.age}">
+				<td th:text="${aEmployee.salary}"> 	 			
+ 	 		</tr>
+ 	 </table>
+ </div>
+  
+</body>
+</html>
