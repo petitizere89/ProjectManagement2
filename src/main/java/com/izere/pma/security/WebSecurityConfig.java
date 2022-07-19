@@ -43,7 +43,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin();
 
-        http.csrf().disable();//Cross-Site Request Forgery
-        http.headers().frameOptions().disable();
+//        http.csrf().disable();//Cross-Site Request Forgery
+//        http.headers().frameOptions().disable();
     }
 }

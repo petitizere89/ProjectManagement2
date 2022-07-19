@@ -20,8 +20,6 @@ public class Employee {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator= "employee_seq")
 	private long empId;
 
-
-
 	private String firstName;
 	
 	private String lastName;

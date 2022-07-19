@@ -8,19 +8,28 @@ public class UserAccount {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_accounts_seq")
-    @Column( name = "user_id")
+    @Column(name = "user_id")
     private long userId;
 
     @Column(name = "username")
     private String userName;
 
     private String email;
+
     private String password;
 
     private boolean enabled = true;
 
-    public UserAccount(){
+    public UserAccount() {
 
+    }
+
+    public long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 
     public String getUserName() {
