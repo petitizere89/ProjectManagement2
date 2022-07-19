@@ -30,5 +30,4 @@ public class SecurityController {
         accountRepo.save(user);
         return "redirect:/";
     }
-
 }

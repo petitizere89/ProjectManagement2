@@ -27,23 +27,23 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication()
-                .usersByUsernameQuery("select username, password, enabled from users where username = ?")
-                .authoritiesByUsernameQuery("select username, role from authorities where username = ?")
+                .usersByUsernameQuery("select username, password, enabled from user_accounts where username = ?")
+                .authoritiesByUsernameQuery("select username, role from user_accounts where username = ?")
                 .dataSource(dataSource)
                 .passwordEncoder(passwordEncoder);
-
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/projects/new").hasRole("ADMIN")
-                .antMatchers("/employees/newEmployee").hasRole("ADMIN")
+//                .antMatchers("/projects/new").hasRole("ADMIN")
+//                .antMatchers("/employees/newEmployee").hasRole("ADMIN")
+//                .antMatchers("/employees/save").hasRole("ADMIN")
                 .antMatchers("/*", "/**").permitAll()
                 .and()
                 .formLogin();
 
-//        http.csrf().disable();//Cross-Site Request Forgery
+        http.csrf().disable();//Cross-Site Request Forgery
 //        http.headers().frameOptions().disable();
     }
 }
