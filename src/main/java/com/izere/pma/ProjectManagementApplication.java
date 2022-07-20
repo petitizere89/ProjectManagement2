@@ -1,18 +1,11 @@
 package com.izere.pma;
 
-import java.util.Arrays;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 
-import com.izere.pma.dao.EmployeeDAO;
+import com.izere.pma.dao.EmployeeRepository;
 import com.izere.pma.dao.ProjectRepository;
-import com.izere.pma.entities.Employee;
-import com.izere.pma.entities.Project;
 
 @SpringBootApplication
 public class ProjectManagementApplication {
@@ -21,7 +14,7 @@ public class ProjectManagementApplication {
     ProjectRepository proRepo;
 
     @Autowired
-    EmployeeDAO empDAO;
+    EmployeeRepository empDAO;
 
     public static void main(String[] args) {
 

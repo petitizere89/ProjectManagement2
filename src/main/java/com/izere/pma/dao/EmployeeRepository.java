@@ -2,16 +2,17 @@ package com.izere.pma.dao;
 
 import java.util.List;
 
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
-import com.izere.pma.dto.EmployeeProjects;
 import com.izere.pma.entities.Employee;
 
-public interface EmployeeDAO extends CrudRepository<Employee, Long>{
+public interface EmployeeRepository extends CrudRepository<Employee, Long>{
 	
 	@Override
 	public List<Employee> findAll();
+
+
+	List<Employee> findByEmpId(Long id);
 
 //	@Query("SELECT e.first_name as firstName, e.last_name as lastName, COUNT(pe.emp_id) as projectCount "
 //			+ "FROM employee e left join employee_project pe ON pe.emp_id= e.emp_id "

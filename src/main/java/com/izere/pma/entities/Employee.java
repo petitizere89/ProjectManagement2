@@ -1,5 +1,7 @@
 package com.izere.pma.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -33,6 +35,7 @@ public class Employee {
 	@JoinTable(name="Employee_Project",
 			   joinColumns=@JoinColumn(name="empId"),
 			   inverseJoinColumns=@JoinColumn(name="projectId") )
+	@JsonIgnore
 	private List<Project> AssignedProj;
 	
 	

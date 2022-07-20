@@ -9,10 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import com.izere.pma.dao.EmployeeDAO;
-import com.izere.pma.dao.ProjectRepository;
+import com.izere.pma.dao.EmployeeRepository;
 import com.izere.pma.entities.Employee;
 import com.izere.pma.entities.Project;
 //Project controller for routing and binding
@@ -25,7 +23,7 @@ public class ProjectController {
 	ProjectServices projectServices;
 	
 	@Autowired
-	EmployeeDAO EmpDAO;
+    EmployeeRepository EmpDAO;
 	
 	@GetMapping
 	public String displayEmployees(Model model) {

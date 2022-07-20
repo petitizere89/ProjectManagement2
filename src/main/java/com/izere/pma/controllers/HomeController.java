@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.izere.pma.dao.EmployeeDAO;
+import com.izere.pma.dao.EmployeeRepository;
 import com.izere.pma.dao.ProjectRepository;
 import com.izere.pma.entities.Employee;
 import com.izere.pma.entities.Project;
@@ -20,7 +20,7 @@ public class HomeController {
 	String ver;
 	
     @Autowired
-	EmployeeDAO empDao;
+    EmployeeRepository empDao;
     
     @Autowired
     ProjectRepository proDao;

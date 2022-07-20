@@ -1,6 +1,6 @@
 package com.izere.pma.services;
 
-import com.izere.pma.dao.EmployeeDAO;
+import com.izere.pma.dao.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.izere.pma.entities.Employee;
@@ -13,7 +13,7 @@ public class EmployeeService {
 
 // Field Injection
   @Autowired
-  EmployeeDAO employeeDAO;
+EmployeeRepository employeeDAO;
 
   public List<Employee> getAll() {
     return employeeDAO.findAll();
